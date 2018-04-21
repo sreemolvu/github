@@ -1,62 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding:9px;
+  font-size: 10px;
+  width:20px;
+  text-align:right;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+.social {
+    
+   float: right;
+    text-align: right;
+}
+</style>
 </head>
 <body>
-<!--footer-->
-<footer class="footer1">
-<div class="container">
-  
-                                <div class="social-icons">
-                                
-                                	<ul class="nomargin">
-                                    
-                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
-	            <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
-	            <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
-	            <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
-                                    
-                                    </ul>
-                                
-                    		
-                       </div>
-</div>
-
-</footer>
 
 
-<div class="footer-bottom">
 
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-				<div class="copyright">
-
-					© 2015, Webenlance, All rights reserved
-
-				</div>
-
-			</div>
-
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-				<div class="design">
-
-					 <a href="#">Franchisee </a> |  <a target="_blank" href="http://www.webenlance.com">Web Design & Development by Webenlance</a>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-</div>
-
+ <div class="footer">
+	
+  <p>©Copyright:© 2018, All rights reserved,cakeshop@gmail.com
+  <span class="social">
+  <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+<a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+<a href="https://www.google.com/" class="fa fa-google"></a>
+<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+</span></p></div>
+ 
 </body>
-
 </html>

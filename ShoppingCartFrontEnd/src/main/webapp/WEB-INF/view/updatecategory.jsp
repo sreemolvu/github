@@ -14,7 +14,7 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				
-					<form action="Upcat" method="post">
+					<form action="${pageContext.request.contextPath}/admin/Upcat" method="post">
 						
 						<div class="form-group">
 							<label for="id" class="cols-sm-2 control-label">Category ID</label>
@@ -49,9 +49,9 @@
 												
 
 							<div class="form-group ">
-							<button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Update category</button>
+							<button  style="background-color: #333;border-color: #333 "type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Update category</button>
 						</div>
-						
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />						
 					</form>
 				</div>
 			</div>

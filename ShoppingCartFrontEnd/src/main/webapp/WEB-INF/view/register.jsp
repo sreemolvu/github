@@ -22,7 +22,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="emailID" id="email"  placeholder="Enter your Email"required/>
+									<input type="email" style="height: 50px" pattern="[a-z0-9._]+@[a-z0-9]+\.[a-z]{2,4}$" class="form-control" name="emailID" id="email"  placeholder="Enter your Email"required/>
 								</div>
 							</div>
 						</div>
@@ -32,7 +32,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="mobile" id="mobile"  placeholder="Enter your mobile"required/>
+									<input type="text"style="height: 50px" pattern="[987]{1}[0-9]{9}$" class="form-control" name="mobile" id="mobile"  placeholder="Enter your mobile"required/>
 								</div>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"required/>
+									<input type="text" style="height: 50px"pattern="[a-z./s]+$" class="form-control" name="name" id="name"  placeholder="Enter your Name"required/>
 								</div>
 							</div>
 						</div>
@@ -56,7 +56,9 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"required/>
+									
+									<input type="password" style="height: 50px" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-control" name="password" id="password"  placeholder="Enter your Password"required/>
+									
 								</div>
 							</div>
 						</div>
@@ -66,21 +68,21 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"required/>
+									<input type="password" style="height: 50px" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"required/>
 								</div>
 							</div>
 						</div>
 
-						<div class="form-group ">
-							<button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						<div class="form-group " >
+							<button style="background-color: #333;border-color: #333 " type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
-						
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />						
 					</form>
 				</div>
 			</div>
 
 
-
+</div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

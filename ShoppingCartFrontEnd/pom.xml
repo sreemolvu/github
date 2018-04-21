@@ -7,6 +7,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ShoppingCartFrontEnd Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+   <properties>
+		<spring.version>4.0.2.RELEASE</spring.version>
+		<jstl.version>1.2</jstl.version>
+	</properties>
+  
  <dependencies>
   <dependency>
     <groupId>junit</groupId>
@@ -14,10 +20,18 @@
     <version>4.4</version>
     <scope>test</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
 <dependency>
 <groupId>com.niit</groupId>
   <artifactId>ShoppingCartBackEnd</artifactId>
-  <version>v1</version></dependency>
+  <version>v1</version>
+  </dependency>
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
 
 
@@ -26,27 +40,27 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
-    <version>4.3.14.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-web</artifactId>
-    <version>4.3.14.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>4.3.14.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
-    <version>4.3.14.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
@@ -64,7 +78,7 @@
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>
-    <version>1.2</version>
+    <version>${jstl.version}</version>
 </dependency>
 <dependency>
     <groupId>commons-io</groupId>
@@ -78,6 +92,39 @@
     <version>1.3.2</version>
 </dependency>
     
+    
+    
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-core</artifactId>
+    <version>3.2.5.RELEASE</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-web</artifactId>
+    <version>3.2.5.RELEASE</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-config</artifactId>
+    <version>3.2.5.RELEASE</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-taglibs</artifactId>
+    <version>3.2.5.RELEASE</version>
+</dependency>
+
+
+
+
+
   </dependencies>
   <build>
     <finalName>ShoppingCartFrontEnd</finalName>

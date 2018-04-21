@@ -11,7 +11,7 @@ public interface CategoryDAO {
 
 	public boolean update_category(Category category);
 
-	public boolean delete_category(String id);
+	public boolean delete_category(Category category);
 	
 	public List<Category> list_category();
 

@@ -1,8 +1,12 @@
 package com.niit.shoppingcart.model;
 
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -21,6 +25,7 @@ public class User
 	private String mobile;
 	private Character role;
 	private String registeredDate;
+
 	public String getEmailID() {
 		return emailID;
 	}

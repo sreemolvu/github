@@ -10,16 +10,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Orders;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
+
 import com.niit.shoppingcart.model.User;
 
 @Configuration
+//@ComponentScan("com.niit")
 @ComponentScan("com.niit")
 @EnableTransactionManagement
 public class ApplicationContextConfig 
@@ -33,14 +37,14 @@ public class ApplicationContextConfig
 	        
 	        
 	        sessionBuilder.addProperties(getHibernateProperties());
-	       /* 	       
-	        sessionBuilder.addAnnotatedClass(Cart.class);
-	        sessionBuilder.addAnnotatedClass(User.class);
-	        sessionBuilder.addAnnotatedClass(Orders.class);*/
+	       
+	        
+	        sessionBuilder.addAnnotatedClass(Orders.class);
 	        sessionBuilder.addAnnotatedClass(User.class);
 	        sessionBuilder.addAnnotatedClass(Category.class); 
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
+	        sessionBuilder.addAnnotatedClass(Cart.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired
@@ -48,7 +52,7 @@ public class ApplicationContextConfig
 	    public DataSource dataSource() {
 	        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	        dataSource.setDriverClassName("org.h2.Driver");
-	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/shoppingcartdb");
+	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/shoppingcartdb2");
 
 	        dataSource.setUsername("sa");
 	        dataSource.setPassword("");

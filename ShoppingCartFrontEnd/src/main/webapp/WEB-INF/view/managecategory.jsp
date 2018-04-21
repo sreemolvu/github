@@ -56,7 +56,7 @@
 							<div class="form-group ">
 							<button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Create category</button>
 						</div>
-						
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />						
 					</form>
 				</div>
 			</div>

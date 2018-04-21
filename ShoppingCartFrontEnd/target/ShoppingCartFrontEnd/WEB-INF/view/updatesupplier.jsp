@@ -15,7 +15,7 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				
-					<form action="Upsup" method="post">
+					<form action="${pageContext.request.contextPath}/admin/Upsup" method="post">
 						
 						<div class="form-group">
 							<label for="id" class="cols-sm-2 control-label">Supplier ID</label>
@@ -50,9 +50,9 @@
 												
 
 							<div class="form-group ">
-							<button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Update supplier</button>
+							<button  style="background-color: #333;border-color: #333 " type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Update supplier</button>
 						</div>
-						
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />						
 					</form>
 				</div>
 			</div>

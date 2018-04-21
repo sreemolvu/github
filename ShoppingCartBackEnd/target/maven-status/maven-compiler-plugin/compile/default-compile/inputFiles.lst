@@ -1,3 +1,6 @@
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\CartDAO.java
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\daoimpl\CartDAOImpl.java
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\Cart.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\UserDAO.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\daoimpl\SupplierDAOImpl.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\CategoryDAO.java
@@ -6,8 +9,11 @@ F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\daoimpl\CategoryDAOImpl.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\Category.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\Supplier.java
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\Orders.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\User.java
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\daoimpl\OrdersDAOImpl.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\config\ApplicationContextConfig.java
+F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\OrdersDAO.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\ProductDAO.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\model\Product.java
 F:\NIIT\Shoppingcart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\daoimpl\UserDAOImpl.java

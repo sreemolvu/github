@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,15 +15,10 @@
 </br>
 </br>
 </br>
-<h3>${Errormessage}</h3><h3>${Welcomemessage}</h3>
 
-<h3>${successmessage}</h3><h3>${failuremessage}</h3>
 
-<a href="products"> Products</a>
-<a href="product"> Product</a>
-<a href="manageproduct"> Manage Product</a>
-<a href="managesupplier"> Manage Supplier</a>
-<a href="managecategory"> Manage Category</a>
+<%--<h3 style="color:red;">${message}</h3> --%>
+
 </br>
 </br>
 </br>
@@ -37,18 +33,18 @@
     </ol>
 
     <!-- Wrapper for slides -->
+ 
     <div class="carousel-inner">
+ 	   <c:forEach items="${productlist}" begin="8" end="8" var="product"> 
       <div class="item active">
-        <img src="resources/images/0.jpg" alt="Zeroimage" style="width:100%;">
+       <a href="product?id=${product.id}" ><img src="${pageContext.request.contextPath}/resources/images/${product.id}.PNG" style="width:1200px;height: 600px"></a>
       </div>
-
+      </c:forEach>
+   <c:forEach items="${productlist}" begin="11" end="12" var="product"> 
       <div class="item">
-        <img src="resources/images/1.jpg" alt="Oneimage" style="width:100%;">
+        <a href="product?id=${product.id}" ><img src="${pageContext.request.contextPath}/resources/images/${product.id}.PNG" style="width:1200px;height: 600px"></a>
       </div>
-    
-      <div class="item">
-        <img src="resources/images/2.jpg" alt="Twoimage" style="width:100%;">
-      </div>
+    </c:forEach>
     </div>
 
     <!-- Left and right controls -->
@@ -65,70 +61,28 @@
 </div> 
 </br>
   </br>
+     <c:forEach items="${productlist}" begin="0" end="2" var="product"> 
     <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                <img class="group list-group-image" src="resources\images\images1.jpg" alt="" />
+                <img class="group list-group-image" src="${pageContext.request.contextPath}/resources/images/${product.id}.PNG" alt="" style="width: 300px;height: 200px" />
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
+                   <a href="product?id=${product.id}" > <h4 class="group inner list-group-item-heading">
+                        ${product.name}</h4></a>
                     <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        ${product.description}</p>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead">
-                                $21.000</p>
+                                ${product.price}</p>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                        <div class="col-xs-12 col-md-6" >
+                            <a class="btn btn-success" style="background-color: #333;border-color: #333; " href="product?id=${product.id}">Add to cart</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-<div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="resources\images\images2.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-<div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="resources\images\images3.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-
+    </div>
+</c:forEach>
 
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

@@ -123,25 +123,26 @@
 
 
 .footer-bottom {
-    background-color: #15224f;
+	padding-top:1000px;
+    background-color: #333;
     min-height: 30px;
     width: 100%;
 }
 .copyright {
-    color: #fff;
+    color: #f7f8f9;
     line-height: 30px;
     min-height: 30px;
-    padding: 7px 0;
+  padding-top:1000px;
 }
 .design {
-    color: #fff;
+    color: #f7f8f9;
     line-height: 30px;
     min-height: 30px;
     padding: 7px 0;
     text-align: right;
 }
 .design a {
-    color: #fff;
+    color: #f7f8f9;
 }
 
 

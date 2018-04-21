@@ -1,6 +1,6 @@
 com\niit\shoppingcart\ProductController.class
 com\niit\shoppingcart\UserController.class
-com\niit\shoppingcart\HomeController.class
 com\niit\util\FileUtil.class
 com\niit\shoppingcart\CategoryController.class
 com\niit\shoppingcart\SupplierController.class
+com\niit\shoppingcart\HomeController.class

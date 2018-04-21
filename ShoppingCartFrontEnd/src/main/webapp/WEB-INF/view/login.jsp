@@ -56,7 +56,8 @@ img.avatar {
 </br>
 </br>
 </br>
-<form action="validate" method="post">
+<h3 align="center">${error}</h3>
+<form action="./j_spring_security_check?${_csrf.parameterName}=${_csrf.token}" method="post">
 
   <div class="imgcontainer">
     <img src="resources\images\avatar.png" alt="Avatar" class="avatar">
@@ -69,13 +70,16 @@ img.avatar {
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
         
-    <button type="submit">Login</button>
+    <button style="background-color: #333;border-color: #333 " id="button" class="btn btn-primary btn-lg btn-block login-button" type="submit">Login</button>
     <label>
    
     </label>
   </div>
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
-
+<br/>
+<br/>
+<br/>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

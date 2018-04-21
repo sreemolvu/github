@@ -19,20 +19,20 @@ public class SupplierController
 	@Autowired
 	private SupplierDAO supplierDAO;
 	
-	@RequestMapping("/managesupplier")
+	@RequestMapping("/admin/s")
 	public ModelAndView category()
 	{
-		ModelAndView mv=new ModelAndView("managesupplier");
+		ModelAndView mv=new ModelAndView("redirect:/admin");
 		List<Supplier> suppliers= supplierDAO.list_supplier();
 		mv.addObject("suppliers",suppliers);
-		
+		mv.addObject("msg", "");
 		return mv;
 	}
-	@RequestMapping("/sup")
+	@RequestMapping("/admin/sup")
 	public ModelAndView createSupplier(@RequestParam("ID")String id,@RequestParam("Address")String address,@RequestParam("name")String name) 
 	//public ModelAndView register(@RequestBody User user)
 	{
-		ModelAndView mv=new ModelAndView("redirect:/managesupplier");
+		ModelAndView mv=new ModelAndView("redirect:/admin");
 		Supplier supplier=new Supplier();
 		supplier.setId(id);
 		supplier.setAddress(address);
@@ -40,41 +40,61 @@ public class SupplierController
 		//System.out.println(name+"---"+password+"---"+m+"---"+mail);
 		if(supplierDAO.save_supplier(supplier))
 		{
-			mv.addObject("successmessage","Successfully created supplier..");
+			mv.addObject("msg","Successfully created supplier..");
 		}
 		else
 		{
-			mv.addObject("failuremessage","Supplier not created..try again");
+			mv.addObject("msg","Supplier not created..try again");
 		}
 		return mv;
 	}
-	@RequestMapping("/deleteS")
+	@RequestMapping("/admin/deleteS")
 	public ModelAndView deleteSupplier(@RequestParam("id")String id)
 	{
-		ModelAndView mv=new ModelAndView("redirect:/managesupplier");
-		Supplier supplier=new Supplier();
+		ModelAndView mv=new ModelAndView("redirect:/admin");
+		Supplier supplier;
 		supplier=supplierDAO.get_supplier(id);
 		try {
-			supplierDAO.delete_supplier(supplier);
+			System.out.println("in try supplier+++++++++++++++++++++++++++++++++++++++++");
+			if(supplierDAO.delete_supplier(supplier))
+			{
+				System.out.println("nooooo errrorrr+****************************************");
+			mv.addObject("msg","successfully deleted supplier");
+			}
+			else
+			{
+				mv.addObject("msg","Product exist within this supplier...couldn't delete ");
+			}
 		} catch (Exception e)
 		{
-			mv.addObject("failuremsg","Product exist within this supplier...couldn't delete ");
+			System.out.println("Catch**************************************");
+			mv.addObject("msg","Product exist within this supplier...couldn't delete ");
 		}
 		return mv;
 	}
-	@RequestMapping("/editS")
+	@RequestMapping("/admin/editS")
 	public ModelAndView editCategory(@RequestParam("id")String id)
 	{
 		ModelAndView mv=new ModelAndView("updatesupplier");
-		Supplier supplier=supplierDAO.get_supplier(id);
+		Supplier supplier=null;
+		try {
+			System.out.println("in get suppl cntroller");
+			supplier=supplierDAO.get_supplier(id);
+			System.out.println(supplier.getAddress());
+			mv.addObject("msg", "");
+		
+		} catch (Exception e) {
+			System.out.println((e.getMessage()));
+			mv.addObject("msg", "");
+		}
 		mv.addObject("supplier",supplier);
 		return mv;
 	}
-	@RequestMapping("/Upsup")
+	@RequestMapping("/admin/Upsup")
 	public ModelAndView updatesupplier(@RequestParam("ID")String id,@RequestParam("Address")String address,@RequestParam("name")String name) 
 	//public ModelAndView register(@RequestBody User user)
 	{
-		ModelAndView mv=new ModelAndView("redirect:/managesupplier");
+		ModelAndView mv=new ModelAndView("redirect:/admin");
 		
 		Supplier supplier=new Supplier();
 		
@@ -84,11 +104,11 @@ public class SupplierController
 		//System.out.println(name+"---"+password+"---"+m+"---"+mail);
 		if(supplierDAO.update_supplier(supplier))
 		{
-			mv.addObject("successmessage","Successfully Updated supplier..");
+			mv.addObject("msg","Successfully Updated supplier..");
 		}
 		else
 		{
-			mv.addObject("failuremessage","supplier not Updated..try again");
+			mv.addObject("msg","supplier not Updated..try again");
 		}
 		return mv;
 	}

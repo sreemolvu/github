@@ -14,7 +14,7 @@ public Product get_product(String id);
 
 	public boolean update_product(Product product);
 
-	public boolean delete_product(String id);
+	public boolean delete_product(Product product);
 	
 	public List<Product> list_product();
 	public List<Product> list_product_cat(String cid);
